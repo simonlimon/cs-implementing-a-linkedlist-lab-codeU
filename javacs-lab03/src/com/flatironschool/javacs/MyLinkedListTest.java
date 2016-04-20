@@ -9,6 +9,7 @@ import static org.junit.Assert.fail;
 import static org.hamcrest.CoreMatchers.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -19,6 +20,7 @@ import org.junit.Test;
  * @author downey
  *
  */
+@SuppressWarnings("All")
 public class MyLinkedListTest {
 
 	private List<Integer> mll;
@@ -64,8 +66,10 @@ public class MyLinkedListTest {
 	 */
 	@Test
 	public void testAddIntT() {
+//		System.out.println(Arrays.toString(mll.toArray()));
+
 		mll.add(1, 5);
-		//System.out.println(Arrays.toString(mal.toArray()));
+//		System.out.println(Arrays.toString(mll.toArray()));
 		assertThat(mll.get(1), is(new Integer(5)));
 		assertThat(mll.size(), is(4));
 		
@@ -80,11 +84,11 @@ public class MyLinkedListTest {
 		} catch (IndexOutOfBoundsException e) {} // good
 		
 		mll.add(0, 6);
-		//System.out.println(Arrays.toString(mal.toArray()));
+//		System.out.println(Arrays.toString(mll.toArray()));
 		assertThat(mll.get(0), is(6));
 
 		mll.add(5, 7);
-		//System.out.println(Arrays.toString(mal.toArray()));
+//		System.out.println(Arrays.toString(mll.toArray()));
 		assertThat(mll.get(5), is(new Integer(7)));
 	}
 
@@ -198,13 +202,13 @@ public class MyLinkedListTest {
 		assertThat(flag, equalTo(true));
 		assertThat(mll.size(), is(2));
 		assertThat(mll.get(1), is(new Integer(3)));
-		//System.out.println(Arrays.toString(mal.toArray()));
+		System.out.println(Arrays.toString(mll.toArray()));
 
 		flag = mll.remove(new Integer(1));
 		assertThat(flag, equalTo(true));
 		assertThat(mll.size(), is(1));
 		assertThat(mll.get(0), is(new Integer(3)));
-		//System.out.println(Arrays.toString(mal.toArray()));
+		System.out.println(Arrays.toString(mll.toArray()));
 		
 		flag = mll.remove(new Integer(5));
 		assertThat(flag, equalTo(false));
